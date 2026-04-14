@@ -1,0 +1,23 @@
+flowchart LR
+  U[User in React DApp]
+  M[MetaMask Wallet]
+  B[BettingMarket.sol]
+  O[SportsOracle.sol]
+  S[Oracle Service<br/>Node.js + Express]
+  A[TheSportsDB API]
+  H[Hardhat Local Chain]
+
+  U -->|Connect / Sign Tx| M
+  M -->|placeBet / settleBet| B
+  B -->|read performance| O
+
+  S -->|fetch sports data| A
+  S -->|submitPlayerData / finalizeMatch| O
+
+  O --> H
+  B --> H
+  M --> H
+  S --> H
+
+  O -->|events DataSubmitted/DataFinalized| U
+  B -->|events BetPlaced/BetSettled| U

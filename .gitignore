@@ -1,0 +1,21 @@
+# Root
+node_modules
+.env
+*.log
+
+# Blockchain
+blockchain/node_modules
+blockchain/artifacts
+blockchain/cache
+blockchain/coverage
+
+# Oracle
+oracle-service/node_modules
+oracle-service/.env
+
+# Frontend
+frontend/node_modules
+frontend/dist
+
+# Misc
+.DS_Store
